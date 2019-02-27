@@ -1,0 +1,27 @@
+<div [(formGroup)]="fg">
+  <ng-template ngFor let-form [ngForOf]="_forms">
+    <ng-container [ngSwitch]="form.type">
+      <mat-form-field *ngSwitchCase="TYPE.SELECT" appearance="fill">
+        <mat-label>{{ form.label }}</mat-label>
+        <mat-select [formControlName]="form.id">
+          <mat-option disabled>{{ form.placeholder }}</mat-option>
+          <mat-option *ngFor="let option of form.options" [value]="option.value">{{ option.label }}</mat-option>
+        </mat-select>
+        <mat-icon matSuffix *ngIf="form.icon" [svgIcon]="form.icon"></mat-icon>
+      </mat-form-field>
+
+      <div *ngSwitchCase="TYPE.RADIO">
+        <label>{{ form.label }}</label>
+        <mat-radio-group [formControlName]="form.id">
+          <mat-radio-button *ngFor="let option of form.options" [value]="option.value">{{ option.label }}</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <mat-form-field *ngSwitchDefault appearance="fill">
+        <mat-label>{{ form.label }}</mat-label>
+        <input matInput type="form.type" [formControlName]="form.id" [placeholder]="form.placeholder">
+        <mat-icon matSuffix *ngIf="form.icon" [svgIcon]="form.icon"></mat-icon>
+      </mat-form-field>
+    </ng-container>
+  </ng-template>
+</div>

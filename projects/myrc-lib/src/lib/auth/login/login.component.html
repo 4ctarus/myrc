@@ -1,0 +1,9 @@
+<h2>Login</h2>
+<form [formGroup]="loginFG" (ngSubmit)="onSubmit()">
+  <myrc-formbuilder [(fg)]="loginFG" [forms]="loginForms"></myrc-formbuilder>
+
+  <div class="form-actions">
+    <button mat-flat-button color="primary" type="submit" [disabled]="!loginFG.valid || onProcess">Login</button>
+    <div class="form-spinner" *ngIf="onProcess"><mat-spinner></mat-spinner></div>
+  </div>
+</form>

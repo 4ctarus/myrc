@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "myrc-lib": [
+        "dist/myrc-lib"
+      ],
+      "myrc-lib/*": [
+        "dist/myrc-lib/*"
+      ]
+    }
   }
 }
