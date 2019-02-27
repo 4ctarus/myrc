@@ -1,14 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { DrawerComponent, DRAWER_CONFIG, DrawerConfigI } from 'projects/myrc-lib/src/lib/drawer/drawer.component';
+import { DrawerComponent, DRAWER_CONFIG, IDrawerConfig } from 'projects/myrc-lib/src/lib/drawer/drawer.component';
 import { MyrcLibModule } from 'projects/myrc-lib/src/public_api';
 import { LoginComponent } from 'projects/myrc-lib/src/lib/auth/login/login.component';
+import { AUTH_SERVICE } from 'projects/myrc-lib/src/lib/auth/auth.service';
+import { MyAuthService } from './service/my-auth.service';
 
 
 const appRoutes: Routes = [
@@ -47,7 +49,7 @@ const APP_DRAWER_CONFIG = {
       path: '/help'
     }
   ]
-} as DrawerConfigI;
+} as IDrawerConfig;
 
 @NgModule({
   declarations: [
@@ -68,9 +70,10 @@ const APP_DRAWER_CONFIG = {
     }),
     MyrcLibModule
   ],
-  providers: [{
-    provide: DRAWER_CONFIG, useValue: APP_DRAWER_CONFIG
-  }],
+  providers: [
+    { provide: 'DRAWER_CONFIG', useValue: APP_DRAWER_CONFIG },
+    { provide: 'AUTH_SERVICE', useClass: MyAuthService }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

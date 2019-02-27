@@ -1,5 +1,9 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
+.myrc-form {
+
+}
+
 .myrc-form-field {
   margin-bottom: 16px;
 
@@ -123,8 +127,11 @@ button.myrc-button {
   justify-content: space-between;
   cursor: pointer;
 
-  &[disabled] {
+  &[disabled]:not(.myrc-button-onprocess) {
     color: $BUTTON_DISABLED_COLOR;
+  }
+  &[disabled] {
+    cursor: not-allowed;
   }
 
   // basic
@@ -147,7 +154,8 @@ button.myrc-button {
     &:hover {
       box-shadow: 0 0 0 0 rgba(0, 0, 0, .2), 0 0 0 0 rgba(0, 0, 0, .14), 0 0 0 0 rgba(0, 0, 0, .12);
     }
-    &[disabled]{
+
+    &[disabled]:not(.myrc-button-onprocess) {
       background-color: $BUTTON_DISABLED_BACKGROUND;
     }
   }
@@ -165,6 +173,26 @@ button.myrc-button {
 
     svg {
       fill: currentColor;
+    }
+  }
+
+  .myrc-button-spinner {
+    width: 24px;
+    height: 24px;
+
+    mat-spinner {
+      width: 100% !important;
+      height: 100% !important;
+
+      svg {
+        width: inherit !important;
+        height: inherit !important;
+        padding: 4px;
+
+        circle {
+          stroke: currentColor;
+        }
+      }
     }
   }
 }

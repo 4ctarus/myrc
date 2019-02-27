@@ -1,6 +1,6 @@
-import { Component, OnInit, Inject, InjectionToken } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
-export interface DrawerConfigI {
+export interface IDrawerConfig {
   menuIcon: string;
   menuItems: {
     label: string,
@@ -9,12 +9,10 @@ export interface DrawerConfigI {
   }[];
 }
 
-export const DRAWER_DEFAULT_CONFIG: DrawerConfigI = {
+export const DRAWER_DEFAULT_CONFIG: IDrawerConfig = {
   menuIcon: null,
   menuItems: []
 };
-
-export let DRAWER_CONFIG = new InjectionToken<DrawerConfigI>('app.config');
 
 @Component({
   selector: 'myrc-drawer',
@@ -23,9 +21,9 @@ export let DRAWER_CONFIG = new InjectionToken<DrawerConfigI>('app.config');
 })
 export class DrawerComponent implements OnInit {
   menuisToggle = false;
-  config: DrawerConfigI;
+  config: IDrawerConfig;
 
-  constructor(@Inject(DRAWER_CONFIG) config: DrawerConfigI) {
+  constructor(@Inject('DRAWER_CONFIG') config: IDrawerConfig) {
     this.config = config;
     console.log(config);
   }

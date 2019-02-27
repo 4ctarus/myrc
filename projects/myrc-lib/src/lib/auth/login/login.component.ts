@@ -1,21 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Form, TYPE } from '../../formbuilder/formbuilder.component';
-import { AuthService } from '../auth.service';
+import { Component, OnInit, Inject } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { finalize } from 'rxjs/operators';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'myrc-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
-  providers: [AuthService]
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   loginFG = new FormGroup({});
   onProcess = false;
 
-  constructor(public authService: AuthService, private router: Router) { }
+  constructor(@Inject('AUTH_SERVICE') public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.authService.loginForms.forEach(form => {
@@ -28,8 +25,8 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    /*this.onProcess = true;
-    this.authService.login(this.signinFG.value).pipe(
+    this.onProcess = true;
+    this.authService.login(this.loginFG.value);/*.pipe(
       finalize(() => this.onProcess = false)
     ).subscribe((res) => {
       if (this.authService.isLoggedIn()) {
