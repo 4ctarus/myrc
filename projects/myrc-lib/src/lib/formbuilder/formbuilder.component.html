@@ -1,27 +1,36 @@
 <div [(formGroup)]="fg">
   <ng-template ngFor let-form [ngForOf]="_forms">
-    <ng-container [ngSwitch]="form.type">
-      <mat-form-field *ngSwitchCase="TYPE.SELECT" appearance="fill">
-        <mat-label>{{ form.label }}</mat-label>
-        <mat-select [formControlName]="form.id">
-          <mat-option disabled>{{ form.placeholder }}</mat-option>
-          <mat-option *ngFor="let option of form.options" [value]="option.value">{{ option.label }}</mat-option>
-        </mat-select>
-        <mat-icon matSuffix *ngIf="form.icon" [svgIcon]="form.icon"></mat-icon>
-      </mat-form-field>
+    <div [ngSwitch]="form.type" class="myrc-form-field" [class.myrc-form-field-invalid]="fg.controls[form.id].touched && fg.controls[form.id].status === 'INVALID'">
 
-      <div *ngSwitchCase="TYPE.RADIO">
-        <label>{{ form.label }}</label>
-        <mat-radio-group [formControlName]="form.id">
-          <mat-radio-button *ngFor="let option of form.options" [value]="option.value">{{ option.label }}</mat-radio-button>
-        </mat-radio-group>
+      <label class="myrc-form-field-label" *ngIf="form.label" [for]="form.id">{{ form.label | translate }}</label>
+
+      <div *ngSwitchCase="TYPE.SELECT" class="myrc-form-field-input" [ngClass]="'myrc-form-field-' + form.type">
+        <label *ngIf="form.icon" class="myrc-form-field-icon" [for]="form.id">
+          <mat-icon [svgIcon]="form.icon"></mat-icon>
+        </label>
+        <select [id]="form.id" [formControlName]="form.id">
+          <option value disabled>{{ form.placeholder | translate }}</option>
+          <option *ngFor="let option of form.options" [ngValue]="option.value">{{ option.label | translate }}</option>
+        </select>
       </div>
 
-      <mat-form-field *ngSwitchDefault appearance="fill">
-        <mat-label>{{ form.label }}</mat-label>
-        <input matInput type="form.type" [formControlName]="form.id" [placeholder]="form.placeholder">
-        <mat-icon matSuffix *ngIf="form.icon" [svgIcon]="form.icon"></mat-icon>
-      </mat-form-field>
-    </ng-container>
+      <div *ngSwitchCase="TYPE.RADIO" class="myrc-form-field-input" [ngClass]="'myrc-form-field-' + form.type">
+        <div class="myrc-form-field-radio-option" *ngFor="let option of form.options" [class.active]="fg.controls[form.id].value === option.value">
+          <div *ngIf="option.icon" class="myrc-form-field-icon">
+            <mat-icon [svgIcon]="option.icon"></mat-icon>
+          </div>
+          <div>{{ option.label }}</div>
+          <input [formControlName]="form.id" type="radio" [value]="option.value">
+        </div>
+      </div>
+
+      <div *ngSwitchDefault class="myrc-form-field-input" [ngClass]="'myrc-form-field-' + form.type">
+        <label *ngIf="form.icon" class="myrc-form-field-icon" [for]="form.id">
+          <mat-icon [svgIcon]="form.icon"></mat-icon>
+        </label>
+        <input [id]="form.id" type="text" [formControlName]="form.id" [placeholder]="form.placeholder | translate">
+      </div>
+
+    </div>
   </ng-template>
 </div>

@@ -15,13 +15,14 @@ export interface Form {
   id: string;
   type: TYPE;
   placeholder: string;
-  label: string;
+  label?: string;
   icon?: string;
   value?: string | number | boolean;
   validator?: any;
   options?: { // for select or multiple choice input
       value: string | number | boolean,
-      label: string
+      label: string,
+      icon?: string
   }[];
 }
 

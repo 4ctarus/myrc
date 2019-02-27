@@ -13,13 +13,12 @@ import { finalize } from 'rxjs/operators';
 })
 export class LoginComponent implements OnInit {
   loginFG = new FormGroup({});
-  loginForms: Form[] = this.authService.loginForms;
   onProcess = false;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(public authService: AuthService, private router: Router) { }
 
   ngOnInit() {
-    this.loginForms.forEach(form => {
+    this.authService.loginForms.forEach(form => {
       this.loginFG.addControl(form.id, new FormControl(form.value, form.validator));
     });
   }

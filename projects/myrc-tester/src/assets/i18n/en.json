@@ -2,5 +2,23 @@
   "BUTTON": {
     "HOME": "Homi",
     "HELP": "Helpi"
+  },
+  "LIB": {
+    "TEXT": {
+      "LOGIN": "Login"
+    },
+    "BUTTON": {
+      "LOGIN": "Login"
+    },
+    "INPUT": {
+      "LABEL": {
+        "PASSWORD": "Password",
+        "EMAIL": "Email"
+      },
+      "PLACEHOLDER": {
+        "PASSWORD": "Please enter your password",
+        "EMAIL": "Pleaser enter your email address"
+      }
+    }
   }
 }

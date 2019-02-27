@@ -41,29 +41,4 @@
 .drawer-content {
   position: relative;
   flex: 1;
-
-  .appbar {
-    justify-content: space-between;
-    background-color: white;
-    display: flex;
-    border-bottom: 1px solid rgba(0, 0, 0, .12);
-
-    h1 {
-      margin: 0;
-      line-height: 56px;
-      font-size: 20px;
-      margin-left: 48px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-  
-    button {
-      margin: 8px;
-    }
-
-    >:first-child {
-      margin-left: 16px;
-    }
-  }
 }
