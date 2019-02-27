@@ -1,8 +1,6 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-.myrc-form {
-
-}
+.myrc-form {}
 
 .myrc-form-field {
   margin-bottom: 16px;
@@ -130,6 +128,7 @@ button.myrc-button {
   &[disabled]:not(.myrc-button-onprocess) {
     color: $BUTTON_DISABLED_COLOR;
   }
+
   &[disabled] {
     cursor: not-allowed;
   }
@@ -171,8 +170,12 @@ button.myrc-button {
       }
     }
 
-    svg {
-      fill: currentColor;
+    .myrc-button-icon-container {
+      font-size: 0;
+
+      svg {
+        fill: currentColor;
+      }
     }
   }
 
@@ -194,5 +197,25 @@ button.myrc-button {
         }
       }
     }
+  }
+}
+
+.myrc-snackbar {
+  color: $SNACKBAR_COLOR;
+  background-color: $SNACKBAR_BACKGROUND;
+
+  button {
+    color: $SNACKBAR_COLOR;
+    font-weight: 600;
+  }
+}
+
+.myrc-snackbar-error {
+  color: $SNACKBAR_ERROR_COLOR;
+  background-color: $SNACKBAR_ERROR_BACKGROUND;
+
+  button {
+    color: $SNACKBAR_ERROR_COLOR;
+    font-weight: 600;
   }
 }

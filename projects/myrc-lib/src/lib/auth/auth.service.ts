@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Validators, FormGroup } from '@angular/forms';
 import { Form, TYPE } from '../formbuilder/formbuilder.component';
+import { Observable, throwError, timer } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AuthService {
@@ -22,10 +25,14 @@ export class AuthService {
       validator: [Validators.required]
     }
   ];
+  public recoverPasswordUrl: string;
 
-  constructor() { }
+  constructor(protected http: HttpClient) { }
 
-  login(fg: FormGroup) {
-    console.log(fg);
+  login(fg: FormGroup): Observable<{}> {
+    return timer(1200)
+      .pipe(
+        switchMap(res => throwError('LIB.ERROR.LOGIN'))
+      );
   }
 }

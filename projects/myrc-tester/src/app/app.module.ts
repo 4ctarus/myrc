@@ -6,10 +6,9 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { DrawerComponent, DRAWER_CONFIG, IDrawerConfig } from 'projects/myrc-lib/src/lib/drawer/drawer.component';
+import { DrawerComponent, IDrawerConfig } from 'projects/myrc-lib/src/lib/drawer/drawer.component';
 import { MyrcLibModule } from 'projects/myrc-lib/src/public_api';
 import { LoginComponent } from 'projects/myrc-lib/src/lib/auth/login/login.component';
-import { AUTH_SERVICE } from 'projects/myrc-lib/src/lib/auth/auth.service';
 import { MyAuthService } from './service/my-auth.service';
 
 

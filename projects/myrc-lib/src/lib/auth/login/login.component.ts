@@ -2,6 +2,8 @@ import { Component, OnInit, Inject } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { MatSnackBar } from '@angular/material';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'myrc-login',
@@ -12,7 +14,11 @@ export class LoginComponent implements OnInit {
   loginFG = new FormGroup({});
   onProcess = false;
 
-  constructor(@Inject('AUTH_SERVICE') public authService: AuthService, private router: Router) { }
+  constructor(
+    @Inject('AUTH_SERVICE') public authService: AuthService,
+    private router: Router,
+    private translate: TranslateService,
+    private snackBar: MatSnackBar) { }
 
   ngOnInit() {
     this.authService.loginForms.forEach(form => {
@@ -26,7 +32,20 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.onProcess = true;
-    this.authService.login(this.loginFG.value);/*.pipe(
+    this.authService.login(this.loginFG.value).subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        this.snackBar.open(this.translate.instant(err), this.translate.instant('LIB.TEXT.OK'), {
+          // duration: 3000
+          panelClass: 'myrc-snackbar'
+        });
+      }
+    ).add(() => {
+      this.onProcess = false;
+    });
+    /*.pipe(
       finalize(() => this.onProcess = false)
     ).subscribe((res) => {
       if (this.authService.isLoggedIn()) {

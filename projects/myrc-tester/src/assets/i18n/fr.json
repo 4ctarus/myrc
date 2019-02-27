@@ -2,5 +2,27 @@
   "BUTTON": {
     "HOME": "Accueil",
     "HELP": "Aide"
+  },
+  "LIB": {
+    "TEXT": {
+      "LOGIN": "Connexion",
+      "OK": "OK"
+    },
+    "BUTTON": {
+      "LOGIN": "Envoyer"
+    },
+    "INPUT": {
+      "LABEL": {
+        "PASSWORD": "Mot de passe",
+        "EMAIL": "Adresse email"
+      },
+      "PLACEHOLDER": {
+        "PASSWORD": "Veuillez saisir votre mot de passe",
+        "EMAIL": "Veuillez saisir votre adresse email"
+      }
+    },
+    "ERROR": {
+      "LOGIN": "Une erreur est survenue; veuillez réessayer plus tard."
+    }
   }
 }

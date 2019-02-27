@@ -1,11 +1,12 @@
 {
   "BUTTON": {
-    "HOME": "Homi",
-    "HELP": "Helpi"
+    "HOME": "Home",
+    "HELP": "Help"
   },
   "LIB": {
     "TEXT": {
-      "LOGIN": "Login"
+      "LOGIN": "Login",
+      "OK": "OK"
     },
     "BUTTON": {
       "LOGIN": "Login"
@@ -19,6 +20,9 @@
         "PASSWORD": "Please enter your password",
         "EMAIL": "Pleaser enter your email address"
       }
+    },
+    "ERROR": {
+      "LOGIN": "Something bad happened; please try again later."
     }
   }
 }
