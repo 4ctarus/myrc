@@ -7,52 +7,9 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class AuthService {
-  public loginForms: Form[] = [
-    {
-      id: 'email',
-      type: TYPE.TEXT,
-      placeholder: 'LIB.LOGIN.INPUT.PLACEHOLDER.EMAIL',
-      label: 'LIB.LOGIN.INPUT.LABEL.EMAIL',
-      value: null,
-      validator: [Validators.required, Validators.email]
-    },
-    {
-      id: 'password',
-      type: TYPE.PASSWORD,
-      placeholder: 'LIB.LOGIN.INPUT.PLACEHOLDER.PASSWORD',
-      label: 'LIB.LOGIN.INPUT.LABEL.PASSWORD',
-      value: null,
-      validator: [Validators.required]
-    }
-  ];
-  public registerForms: Form[] = [
-    {
-      id: 'email',
-      type: TYPE.TEXT,
-      placeholder: 'LIB.REGISTER.INPUT.PLACEHOLDER.EMAIL',
-      label: 'LIB.REGISTER.INPUT.LABEL.EMAIL',
-      value: null,
-      validator: [Validators.required, Validators.email]
-    },
-    {
-      id: 'password',
-      type: TYPE.PASSWORD,
-      placeholder: 'LIB.REGISTER.INPUT.PLACEHOLDER.PASSWORD',
-      label: 'LIB.REGISTER.INPUT.LABEL.PASSWORD',
-      value: null,
-      validator: [Validators.required]
-    }
-  ];
-  public recoverForms: Form[] = [
-    {
-      id: 'email',
-      type: TYPE.TEXT,
-      placeholder: 'LIB.RECOVER.INPUT.PLACEHOLDER.EMAIL',
-      label: 'LIB.RECOVER.INPUT.LABEL.EMAIL',
-      value: null,
-      validator: [Validators.required, Validators.email]
-    }
-  ];
+  public loginForms: Form[] = [];
+  public registerForms: Form[] = [];
+  public recoverForms: Form[] = [];
   public loginUrl: string;
   public recoverPasswordUrl: string;
   public registerUrl: string;

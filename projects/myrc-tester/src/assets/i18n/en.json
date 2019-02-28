@@ -14,14 +14,6 @@
       "BUTTON": {
         "SUBMIT": "Recover",
         "LOGIN": "Login"
-      },
-      "INPUT": {
-        "LABEL": {
-          "EMAIL": "Email"
-        },
-        "PLACEHOLDER": {
-          "EMAIL": "Please enter your email address"
-        }
       }
     },
     "REGISTER": {
@@ -31,16 +23,6 @@
       "BUTTON": {
         "SUBMIT": "Register",
         "LOGIN": "Login"
-      },
-      "INPUT": {
-        "LABEL": {
-          "EMAIL": "Email",
-          "PASSWORD": "Password"
-        },
-        "PLACEHOLDER": {
-          "EMAIL": "Please enter your email address",
-          "PASSWORD": "Please enter your password"
-        }
       }
     },
     "LOGIN": {
@@ -51,16 +33,6 @@
       "BUTTON": {
         "SUBMIT": "Login",
         "RECOVER": "Forgot password?"
-      },
-      "INPUT": {
-        "LABEL": {
-          "EMAIL": "Email",
-          "PASSWORD": "Password"
-        },
-        "PLACEHOLDER": {
-          "EMAIL": "Please enter your email address",
-          "PASSWORD": "Please enter your password"
-        }
       }
     },
     "ERROR": {
