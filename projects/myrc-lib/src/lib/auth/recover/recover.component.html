@@ -1,10 +1,10 @@
-<form class="myrc-form" [formGroup]="registerFG" (ngSubmit)="onSubmit()">
-  <h2>{{ 'LIB.REGISTER.TEXT.TITLE' | translate }}</h2>
-  <myrc-formbuilder [(fg)]="registerFG" [forms]="authService.registerForms"></myrc-formbuilder>
+<form class="myrc-form" [formGroup]="recoverFG" (ngSubmit)="onSubmit()">
+  <h2>{{ 'LIB.RECOVER.TEXT.TITLE' | translate }}</h2>
+  <myrc-formbuilder [(fg)]="recoverFG" [forms]="authService.recoverForms"></myrc-formbuilder>
 
   <div class="myrc-form-actions">
-    <button class="myrc-button myrc-button-raised myrc-button-big myrc-button-icon" type="submit" [class.myrc-button-onprocess]="onProcess" [disabled]="!registerFG.valid || onProcess">
-      <span>{{ 'LIB.REGISTER.BUTTON.SUBMIT' | translate }}</span>
+    <button class="myrc-button myrc-button-raised myrc-button-big myrc-button-icon" type="submit" [class.myrc-button-onprocess]="onProcess" [disabled]="!recoverFG.valid || onProcess">
+      <span>{{ 'LIB.RECOVER.BUTTON.SUBMIT' | translate }}</span>
       <div class="myrc-button-icon-container" *ngIf="!onProcess; else processLoader">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
           <path fill="none" d="M0 0h24v24H0V0z" />
@@ -17,7 +17,7 @@
       </ng-template>
     </button>
     <button *ngIf="authService.loginUrl" [routerLink]="authService.loginUrl" class="myrc-button myrc-button-basic myrc-button-big" type="button">
-      <span>{{ 'LIB.REGISTER.BUTTON.LOGIN' | translate }}</span>
+      <span>{{ 'LIB.RECOVER.BUTTON.LOGIN' | translate }}</span>
     </button>
   </div>
 </form>

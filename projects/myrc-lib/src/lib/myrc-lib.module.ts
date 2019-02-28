@@ -14,9 +14,10 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { MyrcMaterialModule } from './myrc-material.module';
 import { AuthService } from './auth/auth.service';
+import { RecoverComponent } from './auth/recover/recover.component';
 
 @NgModule({
-  declarations: [MyrcLibComponent, DrawerComponent, SafePipe, FormbuilderComponent, IconComponent, LoginComponent, RegisterComponent],
+  declarations: [MyrcLibComponent, DrawerComponent, SafePipe, FormbuilderComponent, IconComponent, LoginComponent, RegisterComponent, RecoverComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

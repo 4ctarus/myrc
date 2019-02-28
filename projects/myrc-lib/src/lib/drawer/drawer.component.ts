@@ -1,4 +1,12 @@
 import { Component, OnInit, Inject } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  // ...
+} from '@angular/animations';
 
 export interface IDrawerConfig {
   menuIcon: string;
@@ -17,7 +25,20 @@ export const DRAWER_DEFAULT_CONFIG: IDrawerConfig = {
 @Component({
   selector: 'myrc-drawer',
   templateUrl: './drawer.component.html',
-  styleUrls: ['./drawer.component.scss']
+  styleUrls: ['./drawer.component.scss'],
+  animations: [
+    trigger('openClose', [
+      state('open', style({
+        width: '*'
+      })),
+      state('closed', style({
+        width: '56px'
+      })),
+      transition('open <=> closed', [
+        animate(200)
+      ])
+    ]),
+  ],
 })
 export class DrawerComponent implements OnInit {
   menuisToggle = false;

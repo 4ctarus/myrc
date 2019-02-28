@@ -10,6 +10,8 @@ import { DrawerComponent, IDrawerConfig } from 'projects/myrc-lib/src/lib/drawer
 import { MyrcLibModule } from 'projects/myrc-lib/src/public_api';
 import { LoginComponent } from 'projects/myrc-lib/src/lib/auth/login/login.component';
 import { MyAuthService } from './service/my-auth.service';
+import { RecoverComponent } from 'projects/myrc-lib/src/lib/auth/recover/recover.component';
+import { RegisterComponent } from 'projects/myrc-lib/src/lib/auth/register/register.component';
 
 
 const appRoutes: Routes = [
@@ -19,9 +21,21 @@ const appRoutes: Routes = [
 
   },
   {
-    path: 'login',
-    component: LoginComponent
-
+    path: 'auth',
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
+      },
+      {
+        path: 'recover',
+        component: RecoverComponent
+      },
+    ]
   },
   {
     path: '**',
@@ -39,12 +53,12 @@ const APP_DRAWER_CONFIG = {
   menuItems: [
     {
       iconUrl: 'home',
-      label: 'BUTTON.HOME',
+      label: 'APP.BUTTON.HOME',
       path: '/'
     },
     {
       iconUrl: 'help',
-      label: 'BUTTON.HELP',
+      label: 'APP.BUTTON.HELP',
       path: '/help'
     }
   ]

@@ -5,12 +5,12 @@ import { MatSnackBar } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'myrc-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'myrc-recover',
+  templateUrl: './recover.component.html',
+  styleUrls: ['./recover.component.scss']
 })
-export class LoginComponent implements OnInit {
-  loginFG = new FormGroup({});
+export class RecoverComponent implements OnInit {
+  recoverFG = new FormGroup({});
   onProcess = false;
 
   constructor(
@@ -19,18 +19,18 @@ export class LoginComponent implements OnInit {
     private snackBar: MatSnackBar) { }
 
   ngOnInit() {
-    this.authService.loginForms.forEach(form => {
-      this.loginFG.addControl(form.id, new FormControl(form.value, form.validator));
+    this.authService.recoverForms.forEach(form => {
+      this.recoverFG.addControl(form.id, new FormControl(form.value, form.validator));
     });
   }
 
   getForm() {
-    console.log(this.loginFG);
+    console.log(this.recoverFG);
   }
 
   onSubmit() {
     this.onProcess = true;
-    this.authService.login(this.loginFG.value).subscribe(
+    this.authService.recover(this.recoverFG.value).subscribe(
       res => {
         console.log(res);
       },

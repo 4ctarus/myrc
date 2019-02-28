@@ -11,29 +11,29 @@
 .drawer-side-menu {
   border-right: 1px solid rgba(0, 0, 0, .12);
   background-color: white;
+  padding: 8px;
   z-index: 10;
 
-  &.toggle {
-    width: initial;
-    button.button-icon > span {
-      margin-left: 8px;
-      width: 56px;
-    }
-  }
+  button {
+    margin: 16px 0;
+    padding: 0 8px;
+    overflow: hidden;
 
-  button.button-icon {
     &:first-child {
       margin-bottom: 56px;
       margin-top: 8px;
     }
-    margin: 16px 8px;
+    &:not(:first-child) {
+      width: 100%;
+    }
 
+    mat-icon {
+      flex-shrink: 0;
+    }
     span {
-      text-align: left;
-      overflow: hidden;
-      margin-left: 0;
-      width: 0;
-      transition: .4s width ease, .4s margin ease;
+      flex: 1;
+      text-align: center;
+      padding: 0 8px;
     }
   }
 }

@@ -1,5 +1,5 @@
-<div class="drawer-side-menu" [class.toggle]="menuisToggle">
-  <button class="button-icon rounded" *ngIf="config.menuItems.length > 0" (click)="menuisToggle = !menuisToggle">
+<div [@openClose]="menuisToggle ? 'open' : 'closed'" class="drawer-side-menu" [class.toggle]="menuisToggle">
+  <button class="myrc-button myrc-button-basic myrc-button-icon myrc-button-rounded" *ngIf="config.menuItems.length > 0" (click)="menuisToggle = !menuisToggle">
     <ng-template [ngIf]="!config.menuIcon" [ngIfElse]="menuIcon">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path fill="none" d="M0 0h24v24H0V0z" />
@@ -10,7 +10,7 @@
     </ng-template>
   </button>
   
-  <button class="button-icon rounded" *ngFor="let menuItem of config.menuItems" [routerLink]="menuItem.path" routerLinkActive="active">
+  <button class="myrc-button myrc-button-basic myrc-button-icon myrc-button-rounded" *ngFor="let menuItem of config.menuItems" [routerLink]="menuItem.path" routerLinkActive="active">
     <mat-icon [svgIcon]="menuItem.iconUrl"></mat-icon>
     <span>{{ menuItem.label | translate }}</span>
   </button>

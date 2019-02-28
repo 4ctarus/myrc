@@ -4,25 +4,84 @@
     "HELP": "Help"
   },
   "LIB": {
-    "TEXT": {
-      "LOGIN": "Login",
+    "COMMON": {
       "OK": "OK"
     },
-    "BUTTON": {
-      "LOGIN": "Login"
-    },
-    "INPUT": {
-      "LABEL": {
-        "PASSWORD": "Password",
-        "EMAIL": "Email"
+    "RECOVER": {
+      "TEXT": {
+        "TITLE": "Forgot password?"
       },
-      "PLACEHOLDER": {
-        "PASSWORD": "Please enter your password",
-        "EMAIL": "Pleaser enter your email address"
+      "BUTTON": {
+        "SUBMIT": "Recover",
+        "LOGIN": "Login"
+      },
+      "INPUT": {
+        "LABEL": {
+          "EMAIL": "Email"
+        },
+        "PLACEHOLDER": {
+          "EMAIL": "Please enter your email address"
+        }
+      }
+    },
+    "REGISTER": {
+      "TEXT": {
+        "TITLE": "Register"
+      },
+      "BUTTON": {
+        "SUBMIT": "Register",
+        "LOGIN": "Login"
+      },
+      "INPUT": {
+        "LABEL": {
+          "EMAIL": "Email",
+          "PASSWORD": "Password"
+        },
+        "PLACEHOLDER": {
+          "EMAIL": "Please enter your email address",
+          "PASSWORD": "Please enter your password"
+        }
+      }
+    },
+    "LOGIN": {
+      "TEXT": {
+        "TITLE": "Login",
+        "REGISTER": "Don't have an account? <b>Signup</b>"
+      },
+      "BUTTON": {
+        "SUBMIT": "Login",
+        "RECOVER": "Forgot password?"
+      },
+      "INPUT": {
+        "LABEL": {
+          "EMAIL": "Email",
+          "PASSWORD": "Password"
+        },
+        "PLACEHOLDER": {
+          "EMAIL": "Please enter your email address",
+          "PASSWORD": "Please enter your password"
+        }
       }
     },
     "ERROR": {
-      "LOGIN": "Something bad happened; please try again later."
+      "AUTH": "Something bad happened; please try again later."
+    }
+  },
+
+  "APP": {
+    "INPUT": {
+      "LABEL": {
+        "EMAIL": "Email",
+        "PASSWORD": "Password"
+      },
+      "PLACEHOLDER": {
+        "EMAIL": "Please enter your email address",
+        "PASSWORD": "Please enter your password"
+      }
+    },
+    "BUTTON": {
+      "HOME": "Home",
+      "HELP": "Help"
     }
   }
 }

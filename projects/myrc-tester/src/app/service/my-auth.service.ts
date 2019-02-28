@@ -16,8 +16,8 @@ export class MyAuthService extends AuthService {
       {
         id: 'email',
         type: TYPE.TEXT,
-        placeholder: 'LIB.INPUT.PLACEHOLDER.EMAIL',
-        label: 'LIB.INPUT.LABEL.EMAIL',
+        placeholder: 'APP.INPUT.PLACEHOLDER.EMAIL',
+        label: 'APP.INPUT.LABEL.EMAIL',
         icon: 'email',
         value: null,
         validator: [Validators.required, Validators.email]
@@ -25,15 +25,29 @@ export class MyAuthService extends AuthService {
       {
         id: 'password',
         type: TYPE.PASSWORD,
-        placeholder: 'LIB.INPUT.PLACEHOLDER.PASSWORD',
-        label: 'LIB.INPUT.LABEL.PASSWORD',
+        placeholder: 'APP.INPUT.PLACEHOLDER.PASSWORD',
+        label: 'APP.INPUT.LABEL.PASSWORD',
         icon: 'lock',
         value: null,
         validator: [Validators.required]
       }
     ];
+    this.registerForms = this.loginForms;
+    this.recoverForms = [
+      {
+        id: 'email',
+        type: TYPE.TEXT,
+        placeholder: 'APP.INPUT.PLACEHOLDER.EMAIL',
+        label: 'APP.INPUT.LABEL.EMAIL',
+        icon: 'email',
+        value: null,
+        validator: [Validators.required, Validators.email]
+      }
+    ];
 
+    this.loginUrl = '/auth/login';
     this.recoverPasswordUrl = '/auth/recover';
+    this.registerUrl = '/auth/register';
   }
 
   /*login(fg: FormGroup): Observable<{}> {
