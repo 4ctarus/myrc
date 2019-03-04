@@ -53,6 +53,7 @@
     },
     "BUTTON": {
       "HOME": "Home",
+      "SETTINGS": "Settings",
       "HELP": "Help"
     }
   }

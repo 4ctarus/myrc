@@ -1,19 +1,12 @@
-<div [@openClose]="menuisToggle ? 'open' : 'closed'" class="drawer-side-menu" [class.toggle]="menuisToggle">
-  <button class="myrc-button myrc-button-basic myrc-button-icon myrc-button-rounded" *ngIf="config.menuItems.length > 0" (click)="menuisToggle = !menuisToggle">
-    <ng-template [ngIf]="!config.menuIcon" [ngIfElse]="menuIcon">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-        <path fill="none" d="M0 0h24v24H0V0z" />
-        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" /></svg>
-    </ng-template>
-    <ng-template #menuIcon>
-      <mat-icon [svgIcon]="config.menuIcon"></mat-icon>
-    </ng-template>
-  </button>
-  
-  <button class="myrc-button myrc-button-basic myrc-button-icon myrc-button-rounded" *ngFor="let menuItem of config.menuItems" [routerLink]="menuItem.path" routerLinkActive="active">
-    <mat-icon [svgIcon]="menuItem.iconUrl"></mat-icon>
-    <span>{{ menuItem.label | translate }}</span>
-  </button>
+<div class="drawer-side-menu">
+  <mat-icon class="drawer-logo" *ngIf="config.menuIcon" [svgIcon]="config.menuIcon"></mat-icon>
+
+  <div>
+    <button [matTooltip]="menuItem.label | translate" matTooltipPosition="after" class="myrc-button myrc-button-basic myrc-button-icon"
+      *ngFor="let menuItem of config.menuItems" [routerLink]="menuItem.path" routerLinkActive="active">
+      <mat-icon [svgIcon]="menuItem.iconUrl"></mat-icon>
+    </button>
+  </div>
 </div>
 
 <div class="drawer-content">

@@ -17,7 +17,16 @@ import { AuthService } from './auth/auth.service';
 import { RecoverComponent } from './auth/recover/recover.component';
 
 @NgModule({
-  declarations: [MyrcLibComponent, DrawerComponent, SafePipe, FormbuilderComponent, IconComponent, LoginComponent, RegisterComponent, RecoverComponent],
+  declarations: [
+    MyrcLibComponent,
+    DrawerComponent,
+    SafePipe,
+    FormbuilderComponent,
+    IconComponent,
+    LoginComponent,
+    RegisterComponent,
+    RecoverComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -32,6 +41,12 @@ import { RecoverComponent } from './auth/recover/recover.component';
     { provide: 'DRAWER_CONFIG', useValue: DRAWER_DEFAULT_CONFIG },
     { provide: 'AUTH_SERVICE', useClass: AuthService }
   ],
-  exports: [MyrcLibComponent]
+  exports: [
+    FormbuilderComponent,
+    LoginComponent,
+    RegisterComponent,
+    RecoverComponent,
+    DrawerComponent
+  ]
 })
 export class MyrcLibModule { }

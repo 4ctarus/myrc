@@ -9,31 +9,17 @@
 }
 
 .drawer-side-menu {
-  border-right: 1px solid rgba(0, 0, 0, .12);
-  background-color: white;
-  padding: 8px;
   z-index: 10;
 
+  .drawer-logo {
+    width: 40px;
+    height: 40px;
+    margin: 8px;
+  }
+
   button {
-    margin: 16px 0;
-    padding: 0 8px;
-    overflow: hidden;
-
     &:first-child {
-      margin-bottom: 56px;
-      margin-top: 8px;
-    }
-    &:not(:first-child) {
-      width: 100%;
-    }
-
-    mat-icon {
-      flex-shrink: 0;
-    }
-    span {
-      flex: 1;
-      text-align: center;
-      padding: 0 8px;
+      margin-top: 56px;
     }
   }
 }

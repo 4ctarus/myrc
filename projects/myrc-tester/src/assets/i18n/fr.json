@@ -1,3 +1,56 @@
 {
+  "LIB": {
+    "COMMON": {
+      "OK": "OK"
+    },
+    "RECOVER": {
+      "TEXT": {
+        "TITLE": "Mot de passe oublié?"
+      },
+      "BUTTON": {
+        "SUBMIT": "Envoyer",
+        "LOGIN": "Se connecter"
+      }
+    },
+    "REGISTER": {
+      "TEXT": {
+        "TITLE": "Inscription"
+      },
+      "BUTTON": {
+        "SUBMIT": "Envoyer",
+        "LOGIN": "Se connecter"
+      }
+    },
+    "LOGIN": {
+      "TEXT": {
+        "TITLE": "Connexion",
+        "REGISTER": "Mot de passe oublié? <b>S'inscrire</b>"
+      },
+      "BUTTON": {
+        "SUBMIT": "Envoyer",
+        "RECOVER": "Mot de passe oublié?"
+      }
+    },
+    "ERROR": {
+      "AUTH": "Une erreur est survenue! Veuillez réessayer ultérieurement."
+    }
+  },
 
+  "APP": {
+    "INPUT": {
+      "LABEL": {
+        "EMAIL": "Adresse email",
+        "PASSWORD": "Mot de passe"
+      },
+      "PLACEHOLDER": {
+        "EMAIL": "Veuillez saisir votre adresse email",
+        "PASSWORD": "Veuillez saisir votre mot de passe"
+      }
+    },
+    "BUTTON": {
+      "HOME": "Accueil",
+      "SETTINGS": "Paramètres",
+      "HELP": "Aide"
+    }
+  }
 }

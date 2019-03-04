@@ -19,11 +19,14 @@ export class AppComponent {
     translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
 
     iconRegistry.addSvgIcon(
-      'menu',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/menu.svg'));
+      'angular',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/angular.svg'));
     iconRegistry.addSvgIcon(
       'home',
       sanitizer.bypassSecurityTrustResourceUrl('assets/icons/home.svg'));
+    iconRegistry.addSvgIcon(
+      'settings',
+      sanitizer.bypassSecurityTrustResourceUrl('assets/icons/settings.svg'));
     iconRegistry.addSvgIcon(
       'help',
       sanitizer.bypassSecurityTrustResourceUrl('assets/icons/help.svg'));

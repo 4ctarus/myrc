@@ -12,13 +12,13 @@ import { LoginComponent } from 'projects/myrc-lib/src/lib/auth/login/login.compo
 import { MyAuthService } from './service/my-auth.service';
 import { RecoverComponent } from 'projects/myrc-lib/src/lib/auth/recover/recover.component';
 import { RegisterComponent } from 'projects/myrc-lib/src/lib/auth/register/register.component';
+import { AppMaterialModule } from './app-material.module';
 
 
 const appRoutes: Routes = [
   {
     path: '',
     component: DrawerComponent
-
   },
   {
     path: 'auth',
@@ -49,12 +49,17 @@ function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
 }
 
 const APP_DRAWER_CONFIG = {
-  menuIcon: 'menu',
+  menuIcon: 'angular',
   menuItems: [
     {
       iconUrl: 'home',
       label: 'APP.BUTTON.HOME',
       path: '/'
+    },
+    {
+      iconUrl: 'settings',
+      label: 'APP.BUTTON.SETTINGS',
+      path: '/settings'
     },
     {
       iconUrl: 'help',

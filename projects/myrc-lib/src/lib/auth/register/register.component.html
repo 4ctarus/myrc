@@ -3,7 +3,7 @@
   <myrc-formbuilder [(fg)]="registerFG" [forms]="authService.registerForms"></myrc-formbuilder>
 
   <div class="myrc-form-actions">
-    <button class="myrc-button myrc-button-raised myrc-button-big myrc-button-icon" type="submit" [class.myrc-button-onprocess]="onProcess" [disabled]="!registerFG.valid || onProcess">
+    <button class="myrc-button myrc-button-raised myrc-button-icon" type="submit" [class.myrc-button-onprocess]="onProcess" [disabled]="!registerFG.valid || onProcess">
       <span>{{ 'LIB.REGISTER.BUTTON.SUBMIT' | translate }}</span>
       <div class="myrc-button-icon-container" *ngIf="!onProcess; else processLoader">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -16,7 +16,7 @@
         </div>
       </ng-template>
     </button>
-    <button *ngIf="authService.loginUrl" [routerLink]="authService.loginUrl" class="myrc-button myrc-button-basic myrc-button-big" type="button">
+    <button *ngIf="authService.loginUrl" [routerLink]="authService.loginUrl" class="myrc-button myrc-button-basic" type="button">
       <span>{{ 'LIB.REGISTER.BUTTON.LOGIN' | translate }}</span>
     </button>
   </div>
