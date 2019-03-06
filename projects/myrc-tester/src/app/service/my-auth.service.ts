@@ -45,9 +45,9 @@ export class MyAuthService extends AuthService {
       }
     ];
 
-    this.loginUrl = '/auth/login';
-    this.recoverPasswordUrl = '/auth/recover';
-    this.registerUrl = '/auth/register';
+    this.loginUrl = '/login';
+    this.recoverPasswordUrl = '/recover';
+    this.registerUrl = '/register';
   }
 
   /*login(fg: FormGroup): Observable<{}> {

@@ -1,6 +1,6 @@
-<div [(formGroup)]="fg">
+<div [(formGroup)]="_fg">
   <ng-template ngFor let-form [ngForOf]="_forms">
-    <div [ngSwitch]="form.type" class="myrc-form-field" [class.myrc-form-field-invalid]="fg.controls[form.id].touched && fg.controls[form.id].status === 'INVALID'">
+    <div [ngSwitch]="form.type" class="myrc-form-field" [class.myrc-form-field-invalid]="_fg.controls[form.id].touched && _fg.controls[form.id].status === 'INVALID'">
 
       <label class="myrc-form-field-label" *ngIf="form.label" [for]="form.id">{{ form.label | translate }}</label>
 
@@ -15,7 +15,7 @@
       </div>
 
       <div *ngSwitchCase="TYPE.RADIO" class="myrc-form-field-input" [ngClass]="'myrc-form-field-' + form.type">
-        <div class="myrc-form-field-radio-option" *ngFor="let option of form.options" [class.active]="fg.controls[form.id].value === option.value">
+        <div class="myrc-form-field-radio-option" *ngFor="let option of form.options" [class.active]="_fg.controls[form.id].value === option.value">
           <div *ngIf="option.icon" class="myrc-form-field-icon">
             <mat-icon [svgIcon]="option.icon"></mat-icon>
           </div>

@@ -18,15 +18,7 @@ export class RecoverComponent implements OnInit {
     private translate: TranslateService,
     private snackBar: MatSnackBar) { }
 
-  ngOnInit() {
-    this.authService.recoverForms.forEach(form => {
-      this.recoverFG.addControl(form.id, new FormControl(form.value, form.validator));
-    });
-  }
-
-  getForm() {
-    console.log(this.recoverFG);
-  }
+  ngOnInit() { }
 
   onSubmit() {
     this.onProcess = true;

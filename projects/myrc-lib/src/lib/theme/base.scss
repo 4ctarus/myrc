@@ -12,19 +12,6 @@ a {
   }
 }
 
-.mat-tooltip {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.drawer-side-menu {
-  border-right: $DRAWER_MENU_BORDER;
-  background-color: $DRAWER_MENU_BACKGROUND;
-
-  button {
-    color: $DRAWER_MENU_COLOR;
-  }
-}
 
 .myrc-form {
 
@@ -152,7 +139,8 @@ a {
 }
 
 
-button.myrc-button {
+button.myrc-button,
+button.myrc-button-raised {
   font-weight: 600;
   border: none;
   border-radius: 4px;
@@ -163,88 +151,67 @@ button.myrc-button {
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
-
-  &[disabled]:not(.myrc-button-onprocess) {
-    color: $BUTTON_DISABLED_COLOR;
-  }
+  transition: background .4s cubic-bezier(.25, .8, .25, 1);
 
   &[disabled] {
     cursor: not-allowed;
   }
 
-  &.myrc-button-icon {
-    span {
-      &:first-child {
-        padding-right: 32px;
-      }
+  svg,
+  mat-icon,
+  mat-spinner {
+    fill: currentColor;
 
-      &:last-child {
-        padding-left: 32px;
-      }
+    &:first-child:not(:last-child) {
+      margin-right: 32px;
     }
 
-    .myrc-button-icon-container {
-      font-size: 0;
-
-      svg {
-        fill: currentColor;
-      }
+    &:last-child:not(:first-child) {
+      margin-left: 32px;
     }
   }
 
-  &.myrc-button-tiny {
-    height: 40px;
-  }
+  mat-spinner {
+    width: 24px !important;
+    height: 24px !important;
 
-  &.myrc-button-rounded {
-    border-radius: 40px;
-  }
+    svg {
+      width: inherit !important;
+      height: inherit !important;
+      padding: 4px;
 
-  // basic
-  &.myrc-button-basic {
-    transition: background .4s cubic-bezier(.25, .8, .25, 1);
-
-    &:hover,
-    &.active {
-      background-color: $BUTTON_BASIC_HOVER_BACKGROUND;
-    }
-  }
-
-  // raised
-  &.myrc-button-raised {
-    background-color: $BUTTON_RAISED_BACKGROUND;
-    color: $BUTTON_RAISED_COLOR;
-    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
-    transition: background .4s cubic-bezier(.25, .8, .25, 1), box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
-
-    &[disabled],
-    &:hover {
-      box-shadow: 0 0 0 0 rgba(0, 0, 0, .2), 0 0 0 0 rgba(0, 0, 0, .14), 0 0 0 0 rgba(0, 0, 0, .12);
-    }
-
-    &[disabled]:not(.myrc-button-onprocess) {
-      background-color: $BUTTON_DISABLED_BACKGROUND;
-    }
-  }
-
-  .myrc-button-spinner {
-    width: 24px;
-    height: 24px;
-
-    mat-spinner {
-      width: 100% !important;
-      height: 100% !important;
-
-      svg {
-        width: inherit !important;
-        height: inherit !important;
-        padding: 4px;
-
-        circle {
-          stroke: currentColor;
-        }
+      circle {
+        stroke: currentColor;
       }
     }
+  }
+}
+
+button.myrc-button {
+  &:hover:not([disabled]),
+  &.active {
+    background-color: $BUTTON_BASIC_HOVER_BACKGROUND;
+  }
+
+  &[disabled]:not(.myrc-button-onprocess) {
+    color: $BUTTON_DISABLED_COLOR;
+  }
+}
+
+button.myrc-button-raised {
+  background-color: $BUTTON_RAISED_BACKGROUND;
+  color: $BUTTON_RAISED_COLOR;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+  transition: background .4s cubic-bezier(.25, .8, .25, 1), box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+
+  &[disabled],
+  &:hover {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, .2), 0 0 0 0 rgba(0, 0, 0, .14), 0 0 0 0 rgba(0, 0, 0, .12);
+  }
+
+  &[disabled]:not(.myrc-button-onprocess) {
+    background-color: $BUTTON_DISABLED_BACKGROUND;
+    color: $BUTTON_DISABLED_COLOR;
   }
 }
 

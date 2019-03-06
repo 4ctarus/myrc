@@ -20,9 +20,9 @@ export interface Form {
   value?: string | number | boolean;
   validator?: any;
   options?: { // for select or multiple choice input
-      value: string | number | boolean,
-      label: string,
-      icon?: string
+    value: string | number | boolean,
+    label: string,
+    icon?: string
   }[];
 }
 
@@ -34,14 +34,29 @@ export interface Form {
 export class FormbuilderComponent implements OnInit {
   TYPE = TYPE;
   _forms: Form[];
-  @Input() fg: FormGroup;
-  @Input('forms')
+  _fg: FormGroup;
+  @Input()
+  set fg(fg: FormGroup) {
+    // console.log(forms);
+    this._fg = fg;
+    this.init();
+  }
+  @Input()
   set forms(forms: Form[]) {
     // console.log(forms);
     this._forms = forms;
+    this.init();
   }
 
   constructor() { }
 
   ngOnInit() { }
+
+  init() {
+    if (this._fg && this._forms) {
+      this._forms.forEach(form => {
+        this._fg.addControl(form.id, new FormControl(form.value, form.validator));
+      });
+    }
+  }
 }

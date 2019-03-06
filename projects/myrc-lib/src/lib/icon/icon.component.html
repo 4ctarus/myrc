@@ -1,4 +1,0 @@
-<div [ngSwitch]="ext" >
-  <div *ngSwitchCase="'svg'" [innerHTML]="icon | async | safe:'html'"></div>
-  <img *ngSwitchDefault [src]="icon" alt="">
-</div>

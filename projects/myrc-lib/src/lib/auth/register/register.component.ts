@@ -18,15 +18,7 @@ export class RegisterComponent implements OnInit {
     private translate: TranslateService,
     private snackBar: MatSnackBar) { }
 
-  ngOnInit() {
-    this.authService.registerForms.forEach(form => {
-      this.registerFG.addControl(form.id, new FormControl(form.value, form.validator));
-    });
-  }
-
-  getForm() {
-    console.log(this.registerFG);
-  }
+  ngOnInit() { }
 
   onSubmit() {
     this.onProcess = true;

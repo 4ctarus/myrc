@@ -6,23 +6,21 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { DrawerComponent, IDrawerConfig } from 'projects/myrc-lib/src/lib/drawer/drawer.component';
 import { MyrcLibModule } from 'projects/myrc-lib/src/public_api';
 import { LoginComponent } from 'projects/myrc-lib/src/lib/auth/login/login.component';
 import { MyAuthService } from './service/my-auth.service';
 import { RecoverComponent } from 'projects/myrc-lib/src/lib/auth/recover/recover.component';
 import { RegisterComponent } from 'projects/myrc-lib/src/lib/auth/register/register.component';
-import { AppMaterialModule } from './app-material.module';
-
 
 const appRoutes: Routes = [
   {
     path: '',
-    component: DrawerComponent
-  },
-  {
-    path: 'auth',
     children: [
+      {
+        path: '',
+        redirectTo: '/login',
+        pathMatch: 'full'
+      },
       {
         path: 'login',
         component: LoginComponent
@@ -48,27 +46,6 @@ function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-const APP_DRAWER_CONFIG = {
-  menuIcon: 'angular',
-  menuItems: [
-    {
-      iconUrl: 'home',
-      label: 'APP.BUTTON.HOME',
-      path: '/'
-    },
-    {
-      iconUrl: 'settings',
-      label: 'APP.BUTTON.SETTINGS',
-      path: '/settings'
-    },
-    {
-      iconUrl: 'help',
-      label: 'APP.BUTTON.HELP',
-      path: '/help'
-    }
-  ]
-} as IDrawerConfig;
-
 @NgModule({
   declarations: [
     AppComponent
@@ -89,7 +66,6 @@ const APP_DRAWER_CONFIG = {
     MyrcLibModule
   ],
   providers: [
-    { provide: 'DRAWER_CONFIG', useValue: APP_DRAWER_CONFIG },
     { provide: 'AUTH_SERVICE', useClass: MyAuthService }
   ],
   bootstrap: [AppComponent]

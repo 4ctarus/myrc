@@ -18,15 +18,7 @@ export class LoginComponent implements OnInit {
     private translate: TranslateService,
     private snackBar: MatSnackBar) { }
 
-  ngOnInit() {
-    this.authService.loginForms.forEach(form => {
-      this.loginFG.addControl(form.id, new FormControl(form.value, form.validator));
-    });
-  }
-
-  getForm() {
-    console.log(this.loginFG);
-  }
+  ngOnInit() { }
 
   onSubmit() {
     this.onProcess = true;
