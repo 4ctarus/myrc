@@ -55,6 +55,9 @@
       "HOME": "Home",
       "SETTINGS": "Settings",
       "HELP": "Help"
+    },
+    "ERROR": {
+      "AUTH": "Something bad happened; please try again later."
     }
   }
 }

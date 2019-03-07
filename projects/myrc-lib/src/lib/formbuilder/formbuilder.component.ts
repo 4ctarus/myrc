@@ -33,29 +33,30 @@ export interface Form {
 })
 export class FormbuilderComponent implements OnInit {
   TYPE = TYPE;
-  _forms: Form[];
-  _fg: FormGroup;
+  private _forms: Form[];
+  private _fg: FormGroup;
   @Input()
   set fg(fg: FormGroup) {
-    // console.log(forms);
     this._fg = fg;
     this.init();
   }
+  get fg(): FormGroup { return this._fg; }
   @Input()
   set forms(forms: Form[]) {
     // console.log(forms);
     this._forms = forms;
     this.init();
   }
+  get forms(): Form[] { return this._forms; }
 
   constructor() { }
 
   ngOnInit() { }
 
   init() {
-    if (this._fg && this._forms) {
+    if (this.fg && this._forms) {
       this._forms.forEach(form => {
-        this._fg.addControl(form.id, new FormControl(form.value, form.validator));
+        this.fg.addControl(form.id, new FormControl(form.value, form.validator));
       });
     }
   }

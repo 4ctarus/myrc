@@ -69,6 +69,6 @@ export class MyAuthService extends AuthService {
         `body was: ${error.error}`);
     }
 
-    return throwError('LIB.ERROR.LOGIN');
+    return throwError('APP.ERROR.AUTH');
   }*/
 }
