@@ -43,7 +43,7 @@ You can also import a default theme.
 |@Input(): string, @Output: string|editable|default value|
 |@Input(): string|editableplaceholder|value if no default value set|
 |@Input(): string[]|keysban|key press event to disable|
-|@Output|options|allowed value on edition|
+|@Input|options|allowed value on edition|
 
 ```html
 <div myrcEditable [(editable)]="test" 
