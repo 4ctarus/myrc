@@ -28,9 +28,9 @@ You can also import a default theme.
 
 ```html
 <form [formGroup]="fg" (ngSubmit)="onSubmit()">
-	<myrc-formbuilder [(fg)]="fg" 
-		[forms]="forms"></myrc-formbuilder>
-	<button type="submit"></button>
+  <myrc-formbuilder [(fg)]="fg" 
+    [forms]="forms"></myrc-formbuilder>
+  <button type="submit"></button>
 </form>
 ```
 
@@ -47,7 +47,7 @@ You can also import a default theme.
 
 ```html
 <div [(myrcContentEditable)]="test" 
-	editableplaceholder="key" 
-	[keysban]="bannedKey" 
-	[options]="allowedValue"></div>
+  editableplaceholder="key" 
+  [keysban]="bannedKey" 
+  [options]="allowedValue"></div>
 ```
