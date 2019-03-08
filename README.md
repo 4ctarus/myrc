@@ -15,12 +15,27 @@ Once the package is installed, import `MyrcLibModule` into your application.
 })
 export class AppModule { }
 ```
+You can also import a default theme.
 
 ## Component
+### MyrcFormbuilder
+>transform an object to FormGroup and editable form, 
+
+||Name|Description|
+|-|-|-|
+|@Input(): FormGroup, @Output: FormGroup|fg|set your empty formgroup|
+|@Input(): Form|forms|set your form options|
+
+```html
+<form [formGroup]="fg" (ngSubmit)="onSubmit()">
+	<myrc-formbuilder [(fg)]="fg" 
+		[forms]="forms"></myrc-formbuilder>
+	<button type="submit"></button>
+</form>
+```
 
 ## Directive
-
-  ### myrcContentEditable
+### myrcContentEditable
   >Directive that enable edition of any html innertext balise
   
 ||Name|Description|
