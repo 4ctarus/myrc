@@ -10,7 +10,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AppComponent {
 
-  constructor(private iconRegistry: MatIconRegistry,
+  constructor(
+    private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
     private translate: TranslateService) {
     const browserLang = translate.getBrowserLang();

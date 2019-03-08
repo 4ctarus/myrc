@@ -5,13 +5,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
-import { SafePipe } from './safe.pipe';
+import { SafePipe } from './pipe/safe.pipe';
 import { FormbuilderComponent } from './formbuilder/formbuilder.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { MyrcMaterialModule } from './myrc-material.module';
 import { AuthService } from './auth/auth.service';
 import { RecoverComponent } from './auth/recover/recover.component';
+import { ContentEditableDirective } from './directive/content-editable.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RecoverComponent } from './auth/recover/recover.component';
     FormbuilderComponent,
     LoginComponent,
     RegisterComponent,
-    RecoverComponent
+    RecoverComponent,
+    ContentEditableDirective
   ],
   imports: [
     BrowserModule,
@@ -39,7 +41,8 @@ import { RecoverComponent } from './auth/recover/recover.component';
     FormbuilderComponent,
     LoginComponent,
     RegisterComponent,
-    RecoverComponent
+    RecoverComponent,
+    ContentEditableDirective
   ]
 })
 export class MyrcLibModule { }

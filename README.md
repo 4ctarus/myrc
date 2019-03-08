@@ -1,27 +1,38 @@
+
 # Myrc
+Set of components, directive and pipe for Angular
+  
+>This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+## Install
 
-## Development server
+Once the package is installed, import `MyrcLibModule` into your application.
+```ts
+@NgModule({
+  ...
+  imports: [MyrcLibModule],
+  ...
+})
+export class AppModule { }
+```
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Component
 
-## Code scaffolding
+## Directive
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  ### myrcContentEditable
+  >Directive that enable edition of any html innertext balise
+  
+||Name|Description|
+|-|-|-|
+|@Input(): string, @Output: string|myrcContentEditable|default value|
+|@Input(): string|editableplaceholder|value if no default value set|
+|@Input(): string[]|keysban|key press event to disable|
+|@Output|options|allowed value on edition|
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```html
+<div [(myrcContentEditable)]="test" 
+	editableplaceholder="key" 
+	[keysban]="bannedKey" 
+	[options]="allowedValue"></div>
+```
