@@ -24,7 +24,7 @@
     "LOGIN": {
       "TEXT": {
         "TITLE": "Connexion",
-        "REGISTER": "Mot de passe oublié? <b>S'inscrire</b>"
+        "REGISTER": "Pas de compte? <b>S'inscrire</b>"
       },
       "BUTTON": {
         "SUBMIT": "Envoyer",

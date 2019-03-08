@@ -1,14 +1,14 @@
 import { Directive, ElementRef, HostListener, Input, Output, EventEmitter, Renderer2, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[myrcContentEditable]'
+  selector: '[myrcEditable]'
 })
-export class ContentEditableDirective implements OnInit {
-  @Input() myrcContentEditable: string;
+export class EditableDirective implements OnInit {
+  @Input() editable: string;
   @Input() editableplaceholder: string;
   @Input() keysban: string[];
   @Input() options: string[];
-  @Output() myrcContentEditableChange = new EventEmitter();
+  @Output() editableChange = new EventEmitter();
 
   @HostListener('focus') onFocus() {
     const value = this.el.nativeElement.innerText;
@@ -31,7 +31,7 @@ export class ContentEditableDirective implements OnInit {
       this.renderer.setProperty(this.el.nativeElement, 'innerText', this.editableplaceholder);
     }
 
-    this.myrcContentEditableChange.emit(value);
+    this.editableChange.emit(value);
   }
   @HostListener('keydown', ['$event']) onKeyDown(event: KeyboardEvent) {
     // check banned key
@@ -71,7 +71,7 @@ export class ContentEditableDirective implements OnInit {
 
   ngOnInit() {
     this.renderer.setAttribute(this.el.nativeElement, 'contenteditable', 'true');
-    this.renderer.setProperty(this.el.nativeElement, 'innerText', this.myrcContentEditable || this.editableplaceholder);
+    this.renderer.setProperty(this.el.nativeElement, 'innerText', this.editable || this.editableplaceholder);
   }
 
   private getFirstMatch(options): string {

@@ -12,7 +12,8 @@ import { RegisterComponent } from './auth/register/register.component';
 import { MyrcMaterialModule } from './myrc-material.module';
 import { AuthService } from './auth/auth.service';
 import { RecoverComponent } from './auth/recover/recover.component';
-import { ContentEditableDirective } from './directive/content-editable.directive';
+import { EditableDirective } from './directive/editable.directive';
+import { DropfileDirective } from './directive/dropfile.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ContentEditableDirective } from './directive/content-editable.directive
     LoginComponent,
     RegisterComponent,
     RecoverComponent,
-    ContentEditableDirective
+    EditableDirective,
+    DropfileDirective
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,8 @@ import { ContentEditableDirective } from './directive/content-editable.directive
     LoginComponent,
     RegisterComponent,
     RecoverComponent,
-    ContentEditableDirective
+    EditableDirective,
+    DropfileDirective
   ]
 })
 export class MyrcLibModule { }

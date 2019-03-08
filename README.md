@@ -35,18 +35,18 @@ You can also import a default theme.
 ```
 
 ## Directive
-### myrcContentEditable
+### myrcEditable
   >Directive that enable edition of any html innertext balise
   
 ||Name|Description|
 |-|-|-|
-|@Input(): string, @Output: string|myrcContentEditable|default value|
+|@Input(): string, @Output: string|editable|default value|
 |@Input(): string|editableplaceholder|value if no default value set|
 |@Input(): string[]|keysban|key press event to disable|
 |@Output|options|allowed value on edition|
 
 ```html
-<div [(myrcContentEditable)]="test" 
+<div myrcEditable [(editable)]="test" 
   editableplaceholder="key" 
   [keysban]="bannedKey" 
   [options]="allowedValue"></div>
