@@ -6,12 +6,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { MyrcLibModule } from 'projects/myrc-lib/src/public_api';
-import { LoginComponent } from 'projects/myrc-lib/src/lib/auth/login/login.component';
+import { MyrcLibModule, LoginComponent, RegisterComponent, RecoverComponent } from 'myrc-lib';
 import { MyAuthService } from './service/my-auth.service';
-import { RecoverComponent } from 'projects/myrc-lib/src/lib/auth/recover/recover.component';
-import { RegisterComponent } from 'projects/myrc-lib/src/lib/auth/register/register.component';
-
 const appRoutes: Routes = [
   {
     path: '',
