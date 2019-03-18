@@ -14,7 +14,7 @@ const appRoutes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/login',
+        redirectTo: 'login',
         pathMatch: 'full'
       },
       {
@@ -33,7 +33,7 @@ const appRoutes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/',
+    redirectTo: '',
     pathMatch: 'full'
   }
 ];

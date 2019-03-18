@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AuthService } from 'projects/myrc-lib/src/lib/auth/auth.service';
+import { AuthService } from 'myrc-lib';
 import { Validators, FormGroup } from '@angular/forms';
 import { TYPE } from 'projects/myrc-lib/src/lib/formbuilder/formbuilder.component';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
